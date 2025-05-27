@@ -1,0 +1,103 @@
+# pubspec.yaml
+# Game Consent Basic App - Pre-Alpha 1 (0.0.1+005251130)
+# Author: Hawke Robinson "The Grandfather of Therapeutic [Role-Playing] Gaming"
+# Official website: www.gameconsent.com
+# Pure Flutter/Dart P2P Bluetooth implementation for Free version
+
+name: gameconsentbasic
+description: "A basic version of the Flutter app for real-time game session consent management using traffic light ratings via Bluetooth P2P communication."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+version: 0.0.1+005251130
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.32.0'
+
+# Dependencies section - attempting to use the latest compatible packages
+# that work with Flutter 3.32.x and Dart 3.8.x SDK requirements
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management - Using BLoC pattern as requested
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  
+  # Bluetooth functionality - using modern BLE package for P2P connectivity
+  # bluetooth_low_energy is actively maintained and supports P2P communication
+  bluetooth_low_energy: ^6.0.0
+  flutter_blue_plus: ^1.32.12  # Keeping as backup option
+  
+  # Permissions handling - required for Bluetooth access on both Android/iOS
+  permission_handler: ^11.3.1
+  
+  # UI/UX enhancements
+  flutter_launcher_icons: ^0.14.1
+  
+  # Utility packages for better development experience
+  logger: ^2.4.0
+  uuid: ^4.5.1
+  
+  # Material Design 3 components (built into Flutter 3.32.x)
+  # Using cupertino_icons for iOS-style icons when needed
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+  
+  # Additional development tools for better code quality
+  build_runner: ^2.4.13
+
+# Flutter launcher icons configuration
+# This section is attempting to configure app icons using your GameConsent assets
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21 # Android 5.0 minimum for proper Bluetooth LE support
+  
+# Flutter configuration section
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # Assets section - trying to reference the GameConsent.com assets you provided
+  # Note: We'll need to download and organize these assets in the assets/ directory
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/logos/
+    
+  # Custom fonts section (if needed for better typography)
+  # fonts:
+  #   - family: GameConsentFont
+  #     fonts:
+  #       - asset: assets/fonts/GameConsentFont-Regular.ttf
+  #       - asset: assets/fonts/GameConsentFont-Bold.ttf
+  #         weight: 700
+
+# Android-specific configuration for Google Play Store compliance
+# This section is attempting to ensure proper Android build configuration
+android:
+  compileSdkVersion: 34
+  targetSdkVersion: 34
+  minSdkVersion: 21 # Required for proper Bluetooth LE functionality
+
+# Additional metadata for the app store listing
+repository: https://github.com/RPG-Research/gameconsent
+homepage: https://www.gameconsent.com
+documentation: https://www.gameconsent.com/support
+issue_tracker: https://github.com/RPG-Research/gameconsent/issues
