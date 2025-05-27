@@ -108,6 +108,8 @@ class _PermissionsPageState extends State<PermissionsPage>
       Permission.bluetoothScan,
       Permission.bluetoothConnect,
       Permission.bluetoothAdvertise,
+      Permission.location, // Required for Bluetooth scanning on Android and iOS
+      Permission.notification, // For consent status change notifications
     ];
 
     // Additional permissions for Game Master role
