@@ -1,4 +1,4 @@
-package com.example.gameconsentbasic
+package com.gameconsent.basic
 
 import io.flutter.embedding.android.FlutterActivity
 

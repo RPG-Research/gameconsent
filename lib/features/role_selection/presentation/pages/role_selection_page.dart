@@ -11,7 +11,7 @@ import 'package:gameconsentbasic/core/constants/app_constants.dart';
 import 'package:gameconsentbasic/core/enums/app_enums.dart';
 
 // TODO: Import BLoC when created
-// import '../bloc/role_selection_bloc.dart';
+// import 'package:gameconsentbasic/bloc/role_selection_bloc.dart';
 
 // lib/features/role_selection/presentation/pages/role_selection_page.dart
 // Game Consent Basic App - Pre-Alpha 1 (0.0.1+005251130)
@@ -19,7 +19,7 @@ import 'package:gameconsentbasic/core/enums/app_enums.dart';
 // Author: Hawke Robinson "The Grandfather of Therapeutic [Role-Playing] Gaming"
 
 // TODO: Import BLoC when created
-// import '../bloc/role_selection_bloc.dart';
+// import 'package:gameconsentbasic/bloc/role_selection_bloc.dart';
 
 /// Role Selection Page Widget
 /// This page is attempting to provide users with a clear choice between
@@ -221,12 +221,20 @@ class _RoleSelectionPageState extends State<RoleSelectionPage>
         ],
       );
     } else {
-      return Column(
-        children: [
-          Expanded(child: _buildRoleCard(context, UserRole.gameMaster)),
-          const SizedBox(height: AppConstants.spacingMedium),
-          Expanded(child: _buildRoleCard(context, UserRole.player)),
-        ],
+      return SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 250,
+              child: _buildRoleCard(context, UserRole.gameMaster),
+            ),
+            const SizedBox(height: AppConstants.spacingMedium),
+            SizedBox(
+              height: 250,
+              child: _buildRoleCard(context, UserRole.player),
+            ),
+          ],
+        ),
       );
     }
   }
